@@ -39,7 +39,7 @@ export default function(babel, opts = {}) {
     return handle;
   }
 
-  function isComponentishName(name) {
+  const isComponentishName = (name) => {
     return typeof name === 'string' && name[0] >= 'A' && name[0] <= 'Z';
   }
 
