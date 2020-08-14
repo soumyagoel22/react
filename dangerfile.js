@@ -60,7 +60,7 @@ const currentBuildResults = JSON.parse(
  * @param {string[]} headers
  * @param {string[][]} body
  */
-function generateMDTable(headers, body) {
+const generateMDTable = (headers, body) => {
   const tableHeaders = [
     headers.join(' | '),
     headers.map(() => ' --- ').join(' | '),
@@ -75,7 +75,7 @@ function generateMDTable(headers, body) {
  * @param {number} change
  * @param {boolean} includeEmoji
  */
-function addPercent(change, includeEmoji) {
+const addPercent = (change, includeEmoji) => {
   if (!isFinite(change)) {
     // When a new package is created
     return 'n/a';
@@ -92,7 +92,7 @@ function addPercent(change, includeEmoji) {
   }
 }
 
-function setBoldness(row, isBold) {
+const setBoldness = (row, isBold) => {
   if (isBold) {
     return row.map(element => `**${element}**`);
   } else {
